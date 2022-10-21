@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Rebooking</h1>
+   <div mat-dialog-content>
+       <form [formGroup]="userForm">
+           <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input formControlName="name" matInput placeholder="name">
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Movie Name</mat-label>
+              <input formControlName="moviename" matInput placeholder="moviename">
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>No of seats</mat-label>
+              <input formControlName="bookedTickets" matInput placeholder="bookedTickets">
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>movie Date</mat-label>
+              <mat-select formControlName="movieData" placeholder="movieData">
+                <mat-option value="17-10-22">17-10-22</mat-option>
+                <mat-option value="18-10-22">18-10-22</mat-option>
+                <mat-option value="19-10-22">19-10-22</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Movie Time</mat-label>
+              <mat-select formControlName="movieTime" placeholder="movieTime">
+                <mat-option value="10 am">10 am</mat-option>
+                <mat-option value="3 pm">3 pm</mat-option>
+                <mat-option value="6 pm">6 pm</mat-option>
+                <mat-option value="10 pm">10 pm</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>
+       </form>
+   </div>
+   <div mat-dialog-action [align]="'end'">
+     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+     <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="changedata()">Save</button>
+
+   </div>

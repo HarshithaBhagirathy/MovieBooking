@@ -1,0 +1,11 @@
+<br>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-4 p-5">
+<div class="col" *ngFor="let p of allmovies">
+  <div class="card g-4 mt-3 mb-2 h-100 shadow" style="width:15rem">
+    <img src={{p.image}} class="card-img-top wraping" alt="...">
+    <div class="card-body">
+      <button  class="btn btn-warning text-center" (click)="register(p.id)"><b class="txtstyle">Book tickets</b></button>
+    </div>
+  </div>
+</div>
+</div>

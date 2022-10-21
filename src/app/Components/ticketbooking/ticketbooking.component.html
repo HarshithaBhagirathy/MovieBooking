@@ -1,0 +1,82 @@
+<div class="container">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 mb-4 p-5">
+        <div class="col">
+          <div class="card card-img-top shadow p-3 mb-5 bg-body rounded">
+            <img src={{movie.image}} class="card-img-top wrapimg" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{movie.moviename}}</h5>
+              <p class="card-text">{{movie.description}}</p>
+            </div>
+            </div>
+            <h3 class="text-white">Available Seats: {{checkTickets}}</h3>
+        </div>
+        
+     
+
+        <div class = "container p-10 text-white">
+          <form #myForm="ngForm"  (ngSubmit)="bookingform(myForm,movie.id);">
+              <div class="mb-3 form-group">
+                  <label for="username" class="form-label">Enter your Name</label>
+                  <input type="text" class="form-control" id="username" 
+                      name="username" ngModel required #username="ngModel"/>
+                  <div id="userhelp1" class="form-text text-white" *ngIf="username.touched && !username.valid">please enter your name</div>
+              </div>
+
+              <div class="mb-3 form-group text-white">
+                <label for="MovieDateSelect">Select Show Date</label>
+                <select [(ngModel)]="moviedate" class="form-select" id="MovieDateSelect" name="MovieDateSelect" required >
+                  <option>17-10-22</option>
+                  <option>18-10-22</option>
+                  <option>19-10-22</option>
+                 </select>
+              </div>
+
+              <div class="mb-3 form-group text-white">
+                <label for="MovieTime">Select Show time</label>
+                <select [(ngModel)]="movietime" class="form-select" id="MovieTime" name="MovieTime">
+                  <option>10 am</option>
+                  <option>3 pm</option>
+                  <option>6 pm</option>
+                  <option>10 pm</option>
+                </select>
+              </div>
+              
+              <div class="mb-3 form-group text-white">
+                <label for="TotalTickets" class="form-label">How many seats?</label>
+                <input type="number" class="form-control" id="TotalTickets" 
+                    name="TotalTickets" ngModel required #TotalTickets="ngModel"/>
+                    <div id="TotalTicketshelp1" class="form-text" *ngIf="[(checkTickets)]<TotalTickets.value">Available tickets are {{checkTickets}} </div>
+                    <div id="TotalTicketshelp2" class="form-text" *ngIf="TotalTickets.touched && !TotalTickets.valid">please enter no of tickets</div>
+                    <div id="TotalTicketshelp3" class="form-text text-white" *ngIf="TotalTickets.value<=0">Available tickets are {{checkTickets}} </div>
+              </div>
+              <!-- <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid || [(checkTickets)]<TotalTickets.value ||  TotalTickets.value <= 0">Submit</button> -->
+                <button  data-bs-target="#md1" data-bs-toggle="modal" type="submit" class="btn btn-warning" [disabled]="!myForm.valid || [(checkTickets)]<TotalTickets.value ||  TotalTickets.value <= 0"><i class="bi bi-bookmark-heart-fill"></i>submit</button>
+  
+               <div>
+                  <div class="modal text-dark" id="md1">
+                      <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h4>Success Message</h4>
+                                 <!-- <button class="btn btn-danger"data-bs-dismiss="modal" >X</button> -->
+                              </div>
+                             <div class="modal-body">
+                                  <div class="row"> <i><i class="bi bi-emoji-laughing-fill"></i> Booked Successfully!</i>
+                                  </div>
+                             </div>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+  
+          </form>
+       </div>
+  </div>
+</div>
+  
+      
+
+
+
+
+

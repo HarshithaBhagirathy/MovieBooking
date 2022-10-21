@@ -1,0 +1,14 @@
+input.ng-touched.ng-invalid{
+    border:3px solid rgb(255, 153, 19);
+ }
+
+ .modal.show{
+    display: block;
+ }
+
+ /* .bgimagees{
+   background-image: url("src\assets\images\popcorn.png");
+   background-image: image("MyMovieBooking\src\assets\images\popcorn.png");
+   background-repeat: no-repeat;
+   background-size: 100%;
+} */
